@@ -18,7 +18,9 @@
 <br>
 
 <p align="center">
-  <img src="docs/assets/screenshots/home.jpg" alt="Luma's Home screen on a Roku TV" width="900">
+  <img src="docs/assets/luma-demo.webp" alt="A 90-second tour of Luma: Home, a movie page with its cast, library filters, a show page and scrub previews, driven by a Roku remote" width="900">
+  <br>
+  <sub>The real interface, recorded in the Roku simulator and driven only by the remote · <a href="https://github.com/jravolio/luma-roku/releases/download/v0.1.0/luma-demo.mp4">full-quality MP4</a></sub>
 </p>
 
 Luma is a native Roku channel for your own [Jellyfin](https://jellyfin.org) library. It brings the Apple TV app's look and feel to Roku TVs: full-bleed artwork, title logos, quiet animations and one-press playback. Picture and sound quality come first: if the TV can play a file as-is, Luma never converts it.
@@ -173,6 +175,10 @@ A Philco Roku TV (G510X hardware) on Roku OS 16, with Jellyfin 12.2. Other Roku 
 ## 🤝 Contributing
 
 Issues and pull requests are welcome. Please run `npm test` before opening a PR, and say what you checked on a real Roku if your change affects playback or the remote.
+
+## 🤖 AI disclosure
+
+Luma was made entirely with AI. The code, tests, documentation, artwork (logo, banner, the remote in the demo) and this README were written by an AI model, [Claude](https://www.anthropic.com/claude) by Anthropic through Claude Code, directed by a human who tested it on a real Roku TV and Jellyfin server.
 
 ## 📄 License
 
