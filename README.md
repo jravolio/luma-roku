@@ -4,7 +4,7 @@
 
 <p>
   <a href="https://github.com/jravolio/luma-roku/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/jravolio/luma-roku/ci.yml?branch=main&style=for-the-badge&label=tests" alt="Tests"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/jravolio/luma-roku?style=for-the-badge" alt="MIT License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-007EC6?style=for-the-badge" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/Roku_OS-16-662D91?style=for-the-badge&logo=roku&logoColor=white" alt="Roku OS 16">
   <img src="https://img.shields.io/badge/Jellyfin-12.2-00A4DC?style=for-the-badge&logo=jellyfin&logoColor=white" alt="Jellyfin 12.2">
   <img src="https://img.shields.io/badge/BrightScript-SceneGraph-2B2B2B?style=for-the-badge" alt="BrightScript and SceneGraph">
