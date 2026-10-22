@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SearchResultCard" extends="Group">
+  <interface>
+    <field id="itemContent" type="node" onChange="ShowResult" />
+    <field id="focusPercent" type="float" onChange="ShowResultFocus" />
+    <field id="gridHasFocus" type="boolean" onChange="ShowResultFocus" />
+  </interface>
+  <script type="text/brightscript" uri="pkg:/source/Utils.brs" />
+  <script type="text/brightscript" uri="SearchResultCard.brs" />
+  <children>
+    <Rectangle id="outline" translation="[7,7]" width="350" height="201" color="0xffffffff" visible="false" />
+    <Rectangle id="placeholder" translation="[12,12]" width="340" height="191" color="0x242424ff" />
+    <Label id="fallback" translation="[36,72]" width="292" height="72" wrap="true" maxLines="2" horizAlign="center" color="0x999999ff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="24" /></Label>
+    <Poster id="poster" translation="[12,12]" width="340" height="191" loadWidth="340" loadDisplayMode="scaleToZoom" />
+    <Label id="title" translation="[12,216]" width="340" height="32" color="0xd0d0d0ff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="24" /></Label>
+    <Label id="subtitle" translation="[12,250]" width="340" height="28" color="0x8f8f8fff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="21" /></Label>
+  </children>
+</component>

@@ -1,0 +1,28 @@
+{
+  "name": "luma-jellyfin-roku",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A native Roku Jellyfin client with a local browser preview",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:ui": "npm --prefix preview run dev",
+    "build:preview": "npm --prefix preview run build",
+    "check:roku": "bsc --project roku/bsconfig.json --create-package false --copy-to-staging false",
+    "check:server": "node scripts/check-server-api.mjs",
+    "build:roku": "bsc --project roku/bsconfig.json && python3 scripts/check-package.py",
+    "simulate:roku": "npm run build:roku && node scripts/roku-simulator.mjs",
+    "simulator:status": "node scripts/roku-simulator.mjs status",
+    "build": "npm run build:preview && npm run build:roku",
+    "test": "node --test tests/server/*.test.mjs tests/roku/*.test.mjs",
+    "doctor": "node scripts/doctor.mjs"
+  },
+  "devDependencies": {
+    "brighterscript": "0.73.6",
+    "brs": "0.45.0"
+  }
+}

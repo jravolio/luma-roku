@@ -1,0 +1,68 @@
+{
+  "play": {
+    "export": "PlayIcon",
+    "size": 48,
+    "svgSha256": "a31f9816f0cb9713acbc39bab1e43dbca67385b13bad62ab00fb06b5d5ceb2ea",
+    "pngSha256": "ee74c6928e32e7b78db70f02889b6e5dcb326137200529a7c5721844cef94828"
+  },
+  "pause": {
+    "export": "PauseIcon",
+    "size": 48,
+    "svgSha256": "efb363d53f284c69946896229204c84c115a1b9470cc85a406ac28e1997eb824",
+    "pngSha256": "bd7f4d9830c059fcadc586961530c3b348b40561f0cbe512a9c56e1ac791c5ab"
+  },
+  "audio": {
+    "export": "AudioIcon",
+    "size": 48,
+    "svgSha256": "085e914e35e860b3bb3a38ecd6f38b65e2d7edb6e4d15441ed1112cce7d159a5",
+    "pngSha256": "4cd2b1e3b2662e73490113dab9ad2523dceb521b6e7f1f65ee8fd75b84cae3a0"
+  },
+  "subtitles": {
+    "export": "SubtitlesIcon",
+    "size": 48,
+    "svgSha256": "dd0917a88d0057717fcfea643433c777282bf6c317b4b363db1d3611b106f3e7",
+    "pngSha256": "a43e56fb84d63a24408536586ee0d5a0963e755be503f9e294ed5964aeda98ed"
+  },
+  "gear": {
+    "export": "GearIcon",
+    "size": 48,
+    "svgSha256": "0a4ca7ee4115b473c03152f295994e417c32334b60484c3e0da195c295bfa07e",
+    "pngSha256": "1b29429ddfda8db795b5eea4185a0d0b47f2155028fafb4320ed0573c4a9c144"
+  },
+  "list": {
+    "export": "ListIcon",
+    "size": 48,
+    "svgSha256": "ab250c10644c25575c981405d2ce876ba9f3415635d8070efd2bba3117b79024",
+    "pngSha256": "1bb0226f5ac514eed011168651b99bf52b726910c4318f79227beeb25e9c9112"
+  },
+  "check": {
+    "export": "CheckIcon",
+    "size": 48,
+    "svgSha256": "5756b7c60f27ebb2cdf294e48d5497be6242908847a556d4a84a056bf9f9afd5",
+    "pngSha256": "5f67197fa7bb1149d2d405e6b2a3e1d034be344d0b7aec89d316a28500235b4e"
+  },
+  "home": {
+    "export": "HomeIcon",
+    "size": 48,
+    "svgSha256": "a76a4363edf7485e4ed5821537068023e7fd0b08ba0956baf8ef73ee65acd338",
+    "pngSha256": "7e0d6c26599a85bd84f89213bdd40fa8a81569db6ef39d71a9c69f5e4c4ad7f6"
+  },
+  "film": {
+    "export": "FilmIcon",
+    "size": 48,
+    "svgSha256": "4e336be5dc17126897ab607ee15e2c52b7a4b078c95d68901cc9d6e4cf03e0a4",
+    "pngSha256": "7c74fa5580123e043831b8f0885ea6607bf6f15266725608756ba7c13ff90067"
+  },
+  "tv": {
+    "export": "TvIcon",
+    "size": 48,
+    "svgSha256": "6199b824984f52b317ddb4cd3afc7139539ea8b6561fd33d0d8ab51380e4f08e",
+    "pngSha256": "377e3204cb7fba92c41b41785ab3bec098ab895197c9848368135ffe363e1a00"
+  },
+  "search": {
+    "export": "SearchIcon",
+    "size": 48,
+    "svgSha256": "b6e5811dd43d0335a5239b0a4e526790f14f8f7a93a50bd0de2e4b631d83dd63",
+    "pngSha256": "f9bc8c32b5bf470503e58ebd82ecf1d6e7902023799f0829574f0db6cd11bd22"
+  }
+}

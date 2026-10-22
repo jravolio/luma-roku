@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="LumaScene" extends="Scene">
+  <customization suspendhandler="customSuspend" />
+  <customization resumehandler="customResume" />
+  <script type="text/brightscript" uri="pkg:/source/Utils.brs" />
+  <script type="text/brightscript" uri="pkg:/source/Icons.brs" />
+  <script type="text/brightscript" uri="LumaScene.brs" />
+  <script type="text/brightscript" uri="PlaybackSession.brs" />
+  <script type="text/brightscript" uri="UIMotion.brs" />
+  <children>
+    <Poster id="backdrop" translation="[0,0]" width="1920" height="960" loadDisplayMode="scaleToZoom" />
+    <Rectangle id="heroShade" width="1920" height="1080" color="0x09090988">
+      <Rectangle id="heroSideShade" width="1240" height="1080" color="0x00000000" />
+    </Rectangle>
+    <Group id="chrome">
+      <Group id="contentSurface">
+      <Group id="heroCopy">
+      <Label id="eyebrow" translation="[80,94]" width="1060" height="36" text="SUA BIBLIOTECA" color="0xb0b0b0ff"><Font role="font" uri="pkg:/fonts/Inter-SemiBold.ttf" size="22" /></Label>
+      <Label id="heroTitle" translation="[80,380]" width="1030" height="160" text="Boas-vindas ao Luma" wrap="true" maxLines="2" vertAlign="bottom" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-Bold.ttf" size="72" /></Label>
+      <Poster id="heroLogo" translation="[80,350]" width="700" height="190" loadDisplayMode="scaleToFit" visible="false" />
+      <Label id="detailGenre" translation="[80,652]" width="1060" height="36" visible="false" color="0xd2d2d2ff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="24" /></Label>
+      <Label id="meta" translation="[80,556]" width="1060" height="36" color="0xd2d2d2ff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="24" /></Label>
+      <Group id="heroExtras">
+      <Label id="synopsis" translation="[80,604]" width="720" height="76" wrap="true" maxLines="2" color="0xd2d2d2ff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="25" /></Label>
+      <Group id="cta" translation="[80,724]">
+        <Rectangle id="ctaBg" width="290" height="64" color="0xffffffff" />
+        <Poster id="ctaIcon" translation="[28,18]" width="28" height="28" loadDisplayMode="scaleToFit" uri="pkg:/images/icons/play.png" visible="false" />
+        <Label id="ctaText" width="290" height="64" text="Explorar" horizAlign="center" vertAlign="center" color="0x090909ff"><Font role="font" uri="pkg:/fonts/Inter-SemiBold.ttf" size="25" /></Label>
+      </Group>
+      <Group id="secondary" translation="[394,724]" visible="false">
+        <Rectangle id="secondaryBg" width="290" height="64" color="0xffffff2e" />
+        <Label id="secondaryText" width="290" height="64" text="Reproduzir do início" horizAlign="center" vertAlign="center" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-SemiBold.ttf" size="25" /></Label>
+      </Group>
+      <Group id="info" translation="[386,724]" visible="false">
+        <Rectangle id="infoBg" width="64" height="64" color="0xffffff2e" />
+        <Label id="infoText" width="64" height="64" text="i" horizAlign="center" vertAlign="center" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-Bold.ttf" size="30" /></Label>
+      </Group>
+      <Group id="featuredPrevious" translation="[466,724]" visible="false">
+        <Rectangle id="featuredPreviousBg" width="64" height="64" color="0xffffff2e" />
+        <Label id="featuredPreviousText" width="64" height="64" text="‹" horizAlign="center" vertAlign="center"><Font role="font" uri="pkg:/fonts/Inter-SemiBold.ttf" size="40" /></Label>
+      </Group>
+      <Group id="featuredNext" translation="[546,724]" visible="false">
+        <Rectangle id="featuredNextBg" width="64" height="64" color="0xffffff2e" />
+        <Label id="featuredNextText" width="64" height="64" text="›" horizAlign="center" vertAlign="center"><Font role="font" uri="pkg:/fonts/Inter-SemiBold.ttf" size="40" /></Label>
+      </Group>
+      <Group id="featuredDots" visible="false">
+        <Rectangle id="featuredDotsBg" height="28" color="0x0000004d" />
+      </Group>
+      </Group>
+      </Group>
+      <Group id="shelfSurface">
+      <RowList id="shelves" translation="[68,688]" itemComponentName="PosterCard" itemSize="[1784,314]" rowHeights="[314]" rowItemSize="[[364,263]]" rowItemSpacing="[[2,0]]" itemSpacing="[0,24]" numRows="1" showRowLabel="[true]" rowLabelOffset="[[12,18]]" rowLabelColor="0xffffffff" rowFocusAnimationStyle="floatingFocus" vertFocusAnimationStyle="fixedFocus" drawFocusFeedback="false" drawFocusFeedbackOnTop="false" />
+      </Group>
+      <Label visible="false" id="hint" translation="[80,1030]" width="1760" height="28" text="" color="0xb8b8b8ff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="24" /></Label>
+      <!-- Apple TV's library column: categories, then how the grid is shown. -->
+      <Group id="libraryRail" translation="[80,120]" visible="false">
+        <Label text="Biblioteca" width="320" height="62" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-Bold.ttf" size="43" /></Label>
+        <Rectangle id="railMoviesBg" translation="[-20,96]" width="300" height="60" color="0x00000000" />
+        <Label id="railMovies" translation="[0,96]" width="270" height="60" vertAlign="center" text="Filmes" color="0x9a9a9eff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="27" /></Label>
+        <Rectangle id="railSeriesBg" translation="[-20,164]" width="300" height="60" color="0x00000000" />
+        <Label id="railSeries" translation="[0,164]" width="270" height="60" vertAlign="center" text="Séries" color="0x9a9a9eff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="27" /></Label>
+        <Rectangle id="railCollectionsBg" translation="[-20,232]" width="300" height="60" color="0x00000000" />
+        <Label id="railCollections" translation="[0,232]" width="270" height="60" vertAlign="center" text="Coleções" color="0x9a9a9eff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="27" /></Label>
+        <Label translation="[0,332]" width="270" height="30" text="EXIBIR" color="0x6e6e73ff"><Font role="font" uri="pkg:/fonts/Inter-SemiBold.ttf" size="19" /></Label>
+        <Rectangle id="railSortBg" translation="[-20,370]" width="300" height="84" color="0x00000000" />
+        <Label id="railSortCaption" translation="[0,380]" width="270" height="28" text="Ordenar por" color="0x9a9a9eff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="20" /></Label>
+        <Label id="railSort" translation="[0,406]" width="270" height="36" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="25" /></Label>
+        <Rectangle id="railGenreBg" translation="[-20,462]" width="300" height="84" color="0x00000000" />
+        <Label id="railGenreCaption" translation="[0,472]" width="270" height="28" text="Gênero" color="0x9a9a9eff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="20" /></Label>
+        <Label id="railGenre" translation="[0,498]" width="270" height="36" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="25" /></Label>
+        <Rectangle id="railUnwatchedBg" translation="[-20,554]" width="300" height="60" color="0x00000000" />
+        <Label id="railUnwatched" translation="[0,554]" width="220" height="60" vertAlign="center" text="Não assistidos" color="0x9a9a9eff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="25" /></Label>
+        <Poster id="railUnwatchedCheck" translation="[240,573]" width="22" height="22" uri="pkg:/images/icons/check.png" visible="false" />
+        <Label id="railEmpty" translation="[360,64]" width="1300" height="40" visible="false" color="0x9a9a9eff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="27" /></Label>
+      </Group>
+      <Group id="backButton" translation="[80,96]" visible="false">
+        <Rectangle id="backButtonBg" width="176" height="58" color="0x29292999" />
+        <Label id="backButtonText" width="176" height="58" text="‹  Voltar" horizAlign="center" vertAlign="center" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="25" /></Label>
+      </Group>
+      </Group>
+      <SearchScreen id="searchScreen" visible="false" />
+      <Group id="sidebar" translation="[34,34]" visible="false">
+        <Rectangle id="sidebarPanel" width="359" height="514" color="0x3a3a3ceb" />
+        <Rectangle id="avatar" translation="[22,22]" width="52" height="52" color="0x8e8e93ff" />
+        <Label id="avatarInitial" translation="[22,22]" width="52" height="52" horizAlign="center" vertAlign="center" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-SemiBold.ttf" size="25" /></Label>
+        <Label id="account" translation="[88,22]" width="160" height="52" vertAlign="center" text="Não conectado" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="24" /></Label>
+        <Label id="clock" translation="[236,22]" width="100" height="52" horizAlign="right" vertAlign="center" color="0xc8c8c8ff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="22" /></Label>
+        <Group id="nav" translation="[16,104]" />
+      </Group>
+    </Group>
+    <Group id="welcome" visible="false">
+      <Rectangle id="welcomePanel" translation="[80,862]" width="1760" height="144" color="0xffffff1a" />
+      <Label translation="[116,880]" text="Conecte seu servidor Jellyfin" width="1380" height="48" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-SemiBold.ttf" size="30" /></Label>
+      <Label translation="[116,932]" text="O Luma procura o Jellyfin na sua rede. Entre uma vez: o servidor e a conta ficam salvos neste Roku, mesmo se o IP do computador mudar." width="1640" height="44" wrap="true" maxLines="1" color="0xc8c8c8ff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="25" /></Label>
+    </Group>
+    <!-- Holds key focus while a request is pending; it shows nothing. -->
+    <Label id="status" />
+    <ChoiceMenu id="choiceMenu" translation="[660,180]" visible="false" />
+    <LoadingIndicator id="spinner" translation="[960,540]" visible="false" dimScreen="true" />
+    <Group id="playbackSurface">
+      <Video id="video" width="1920" height="1080" visible="false" notificationInterval="1" asyncStopSemantics="true" enableUI="false" suppressCaptions="true" />
+      <Rectangle id="resumeCover" width="1920" height="1080" color="0x000000ff" visible="false" />
+      <PlayerControls id="playerControls" visible="false" />
+    </Group>
+    <Animation id="sidebarMotion" duration="0.18" easeFunction="outCubic">
+      <Vector2DFieldInterpolator id="sidebarPosition" key="[0,1]" keyValue="[[10,34],[34,34]]" fieldToInterp="sidebar.translation" />
+      <FloatFieldInterpolator id="sidebarOpacity" key="[0,1]" keyValue="[0,1]" fieldToInterp="sidebar.opacity" />
+    </Animation>
+    <Animation id="pageMotion" duration="0.16" easeFunction="outCubic">
+      <Vector2DFieldInterpolator key="[0,1]" keyValue="[[0,8],[0,0]]" fieldToInterp="contentSurface.translation" />
+      <FloatFieldInterpolator key="[0,1]" keyValue="[0.65,1]" fieldToInterp="contentSurface.opacity" />
+    </Animation>
+    <Animation id="homeLayoutMotion" duration="0.28" easeFunction="piecewise" easeInPercent="0.15" easeOutPercent="0.75">
+      <Vector2DFieldInterpolator id="homeShelfPosition" key="[0,1]" fieldToInterp="shelfSurface.translation" />
+      <Vector2DFieldInterpolator id="homeHeroScale" key="[0,1]" fieldToInterp="heroCopy.scale" />
+      <Vector2DFieldInterpolator id="homeHeroPosition" key="[0,1]" fieldToInterp="heroCopy.translation" />
+      <FloatFieldInterpolator id="homeExtrasOpacity" key="[0,1]" fieldToInterp="heroCopy.opacity" />
+      <FloatFieldInterpolator id="homeBackdropOpacity" key="[0,1]" fieldToInterp="backdrop.opacity" />
+    </Animation>
+    <AmbientScreen id="ambient" visible="false" />
+    <Timer id="idleTimer" duration="180" repeat="false" />
+    <Timer id="prefetchTimer" duration="0.6" repeat="false" />
+    <Timer id="resumeTimer" duration="20" repeat="false" />
+    <Timer id="reportTimer" duration="10" repeat="true" />
+    <JellyfinTask id="service" />
+  </children>
+</component>

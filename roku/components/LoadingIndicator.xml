@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- tvOS-style activity indicator on a dark panel, centred on its own origin. -->
+<component name="LoadingIndicator" extends="Group">
+  <interface>
+    <field id="control" type="string" onChange="OnControl" />
+    <field id="text" type="string" onChange="OnText" />
+    <field id="dimScreen" type="boolean" value="false" />
+  </interface>
+  <script type="text/brightscript" uri="pkg:/source/Utils.brs" />
+  <script type="text/brightscript" uri="LoadingIndicator.brs" />
+  <children>
+    <Group id="indicatorRoot" opacity="0">
+      <Rectangle id="indicatorDim" width="1920" height="1080" color="0x00000073" visible="false" />
+      <Rectangle id="indicatorPlate" translation="[-170,-100]" width="340" height="200" color="0x1c1c1ef7" />
+      <Poster id="indicatorSpokes" translation="[-44,-78]" width="88" height="88" scaleRotateCenter="[44,44]" uri="pkg:/images/activity.png" />
+      <Label id="indicatorLabel" translation="[-150,26]" width="300" height="64" horizAlign="center" vertAlign="top" wrap="true" maxLines="2" color="0xf2f2f7ff"><Font role="font" uri="pkg:/fonts/Inter-Medium.ttf" size="26" /></Label>
+    </Group>
+    <!-- Eight discrete 45° ticks per 0.8 s, like UIActivityIndicatorView. -->
+    <Animation id="indicatorSpin" duration="0.8" repeat="true" easeFunction="linear">
+      <FloatFieldInterpolator key="[0.0, 0.124, 0.125, 0.249, 0.25, 0.374, 0.375, 0.499, 0.5, 0.624, 0.625, 0.749, 0.75, 0.874, 0.875, 1.0]" keyValue="[0.0, 0.0, -0.785398, -0.785398, -1.570796, -1.570796, -2.356194, -2.356194, -3.141593, -3.141593, -3.926991, -3.926991, -4.712389, -4.712389, -5.497787, -5.497787]" fieldToInterp="indicatorSpokes.rotation" />
+    </Animation>
+    <Animation id="indicatorFade" duration="0.2" easeFunction="outCubic">
+      <FloatFieldInterpolator key="[0.0, 1.0]" keyValue="[0.0, 1.0]" fieldToInterp="indicatorRoot.opacity" />
+    </Animation>
+    <Timer id="indicatorDelay" duration="0.15" repeat="false" />
+  </children>
+</component>

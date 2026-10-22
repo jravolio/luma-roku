@@ -1,0 +1,516 @@
+{
+  "checkedAt": "2026-10-11T22:33:45.329Z",
+  "source": "/api-docs/openapi.json (unauthenticated live Jellyfin server)",
+  "info": {
+    "title": "Jellyfin API",
+    "version": "12.2.0",
+    "x-jellyfin-version": "12.2.0"
+  },
+  "endpoints": {
+    "/System/Info/Public": {
+      "get": {
+        "operationId": "GetPublicSystemInfo"
+      }
+    },
+    "/Users/AuthenticateByName": {
+      "post": {
+        "operationId": "AuthenticateUserByName",
+        "body": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/AuthenticateUserByName"
+            }
+          ],
+          "description": "The authenticate user by name request body."
+        }
+      }
+    },
+    "/Users/{userId}": {
+      "get": {
+        "operationId": "GetUserById",
+        "parameters": [
+          "userId"
+        ]
+      }
+    },
+    "/Items": {
+      "get": {
+        "operationId": "GetItems",
+        "parameters": [
+          "userId",
+          "maxOfficialRating",
+          "hasThemeSong",
+          "hasThemeVideo",
+          "hasSubtitles",
+          "hasSpecialFeature",
+          "hasTrailer",
+          "adjacentTo",
+          "indexNumber",
+          "parentIndexNumber",
+          "hasParentalRating",
+          "isHd",
+          "is4K",
+          "locationTypes",
+          "excludeLocationTypes",
+          "isMissing",
+          "isUnaired",
+          "minCommunityRating",
+          "minCriticRating",
+          "minPremiereDate",
+          "minDateLastSaved",
+          "minDateLastSavedForUser",
+          "maxPremiereDate",
+          "hasOverview",
+          "hasImdbId",
+          "hasTmdbId",
+          "hasTvdbId",
+          "isMovie",
+          "isSeries",
+          "isNews",
+          "isKids",
+          "isSports",
+          "excludeItemIds",
+          "startIndex",
+          "limit",
+          "recursive",
+          "searchTerm",
+          "sortOrder",
+          "parentId",
+          "fields",
+          "excludeItemTypes",
+          "includeItemTypes",
+          "filters",
+          "isFavorite",
+          "mediaTypes",
+          "imageTypes",
+          "sortBy",
+          "isPlayed",
+          "genres",
+          "officialRatings",
+          "tags",
+          "years",
+          "enableUserData",
+          "imageTypeLimit",
+          "enableImageTypes",
+          "person",
+          "personIds",
+          "personTypes",
+          "studios",
+          "artists",
+          "excludeArtistIds",
+          "artistIds",
+          "albumArtistIds",
+          "contributingArtistIds",
+          "albums",
+          "albumIds",
+          "ids",
+          "videoTypes",
+          "minOfficialRating",
+          "isLocked",
+          "isPlaceHolder",
+          "hasOfficialRating",
+          "collapseBoxSetItems",
+          "minWidth",
+          "minHeight",
+          "maxWidth",
+          "maxHeight",
+          "is3D",
+          "seriesStatus",
+          "nameStartsWithOrGreater",
+          "nameStartsWith",
+          "nameLessThan",
+          "studioIds",
+          "genreIds",
+          "audioLanguages",
+          "subtitleLanguages",
+          "enableTotalRecordCount",
+          "enableImages"
+        ]
+      }
+    },
+    "/Items/{itemId}": {
+      "post": {
+        "operationId": "UpdateItem",
+        "parameters": [
+          "itemId"
+        ],
+        "body": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/BaseItemDto"
+            }
+          ],
+          "description": "This is strictly used as a data transfer object from the api layer.\nThis holds information about a BaseItem in a format that is convenient for the client."
+        }
+      },
+      "get": {
+        "operationId": "GetItem",
+        "parameters": [
+          "userId",
+          "itemId"
+        ]
+      }
+    },
+    "/Items/Latest": {
+      "get": {
+        "operationId": "GetLatestMedia",
+        "parameters": [
+          "userId",
+          "parentId",
+          "fields",
+          "includeItemTypes",
+          "isPlayed",
+          "enableImages",
+          "imageTypeLimit",
+          "enableImageTypes",
+          "enableUserData",
+          "limit",
+          "groupItems"
+        ]
+      }
+    },
+    "/UserItems/Resume": {
+      "get": {
+        "operationId": "GetResumeItems",
+        "parameters": [
+          "userId",
+          "startIndex",
+          "limit",
+          "searchTerm",
+          "parentId",
+          "fields",
+          "mediaTypes",
+          "enableUserData",
+          "imageTypeLimit",
+          "enableImageTypes",
+          "excludeItemTypes",
+          "includeItemTypes",
+          "enableTotalRecordCount",
+          "enableImages",
+          "excludeActiveSessions"
+        ]
+      }
+    },
+    "/Items/{itemId}/PlaybackInfo": {
+      "get": {
+        "operationId": "GetPlaybackInfo",
+        "parameters": [
+          "itemId",
+          "userId"
+        ]
+      },
+      "post": {
+        "operationId": "GetPostedPlaybackInfo",
+        "parameters": [
+          "itemId",
+          "userId",
+          "maxStreamingBitrate",
+          "startTimeTicks",
+          "audioStreamIndex",
+          "subtitleStreamIndex",
+          "maxAudioChannels",
+          "mediaSourceId",
+          "liveStreamId",
+          "autoOpenLiveStream",
+          "enableDirectPlay",
+          "enableDirectStream",
+          "enableTranscoding",
+          "allowVideoStreamCopy",
+          "allowAudioStreamCopy"
+        ],
+        "body": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PlaybackInfoDto"
+            }
+          ],
+          "description": "Playback info dto."
+        }
+      }
+    },
+    "/Sessions/Logout": {
+      "post": {
+        "operationId": "ReportSessionEnded"
+      }
+    },
+    "/Sessions/Playing": {
+      "post": {
+        "operationId": "ReportPlaybackStart",
+        "body": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PlaybackStartInfo"
+            }
+          ],
+          "description": "Class PlaybackStartInfo."
+        }
+      }
+    },
+    "/Sessions/Playing/Progress": {
+      "post": {
+        "operationId": "ReportPlaybackProgress",
+        "body": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PlaybackProgressInfo"
+            }
+          ],
+          "description": "Class PlaybackProgressInfo."
+        }
+      }
+    },
+    "/Sessions/Playing/Stopped": {
+      "post": {
+        "operationId": "ReportPlaybackStopped",
+        "body": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/PlaybackStopInfo"
+            }
+          ],
+          "description": "Class PlaybackStopInfo."
+        }
+      }
+    },
+    "/Items/{itemId}/Images/{imageType}": {
+      "post": {
+        "operationId": "SetItemImage",
+        "parameters": [
+          "itemId",
+          "imageType"
+        ]
+      },
+      "get": {
+        "operationId": "GetItemImage",
+        "parameters": [
+          "itemId",
+          "imageType",
+          "maxWidth",
+          "maxHeight",
+          "width",
+          "height",
+          "quality",
+          "fillWidth",
+          "fillHeight",
+          "tag",
+          "format",
+          "percentPlayed",
+          "unplayedCount",
+          "blur",
+          "backgroundColor",
+          "foregroundLayer",
+          "imageIndex"
+        ]
+      },
+      "head": {
+        "operationId": "HeadItemImage",
+        "parameters": [
+          "itemId",
+          "imageType",
+          "maxWidth",
+          "maxHeight",
+          "width",
+          "height",
+          "quality",
+          "fillWidth",
+          "fillHeight",
+          "tag",
+          "format",
+          "percentPlayed",
+          "unplayedCount",
+          "blur",
+          "backgroundColor",
+          "foregroundLayer",
+          "imageIndex"
+        ]
+      }
+    },
+    "/Items/{itemId}/Images/{imageType}/{imageIndex}": {
+      "post": {
+        "operationId": "SetItemImageByIndex",
+        "parameters": [
+          "itemId",
+          "imageType",
+          "imageIndex"
+        ]
+      },
+      "get": {
+        "operationId": "GetItemImageByIndex",
+        "parameters": [
+          "itemId",
+          "imageType",
+          "imageIndex",
+          "maxWidth",
+          "maxHeight",
+          "width",
+          "height",
+          "quality",
+          "fillWidth",
+          "fillHeight",
+          "tag",
+          "format",
+          "percentPlayed",
+          "unplayedCount",
+          "blur",
+          "backgroundColor",
+          "foregroundLayer"
+        ]
+      },
+      "head": {
+        "operationId": "HeadItemImageByIndex",
+        "parameters": [
+          "itemId",
+          "imageType",
+          "imageIndex",
+          "maxWidth",
+          "maxHeight",
+          "width",
+          "height",
+          "quality",
+          "fillWidth",
+          "fillHeight",
+          "tag",
+          "format",
+          "percentPlayed",
+          "unplayedCount",
+          "blur",
+          "backgroundColor",
+          "foregroundLayer"
+        ]
+      }
+    },
+    "/Videos/{itemId}/stream": {
+      "get": {
+        "operationId": "GetVideoStream",
+        "parameters": [
+          "itemId",
+          "container",
+          "static",
+          "params",
+          "tag",
+          "deviceProfileId",
+          "playSessionId",
+          "segmentContainer",
+          "segmentLength",
+          "minSegments",
+          "mediaSourceId",
+          "deviceId",
+          "audioCodec",
+          "enableAutoStreamCopy",
+          "allowVideoStreamCopy",
+          "allowAudioStreamCopy",
+          "audioSampleRate",
+          "maxAudioBitDepth",
+          "audioBitRate",
+          "audioChannels",
+          "maxAudioChannels",
+          "profile",
+          "level",
+          "framerate",
+          "maxFramerate",
+          "copyTimestamps",
+          "startTimeTicks",
+          "width",
+          "height",
+          "maxWidth",
+          "maxHeight",
+          "videoBitRate",
+          "subtitleStreamIndex",
+          "subtitleMethod",
+          "maxRefFrames",
+          "maxVideoBitDepth",
+          "requireAvc",
+          "deInterlace",
+          "requireNonAnamorphic",
+          "transcodingMaxAudioChannels",
+          "cpuCoreLimit",
+          "liveStreamId",
+          "enableMpegtsM2TsMode",
+          "videoCodec",
+          "subtitleCodec",
+          "transcodeReasons",
+          "audioStreamIndex",
+          "videoStreamIndex",
+          "context",
+          "streamOptions",
+          "enableAudioVbrEncoding"
+        ]
+      },
+      "head": {
+        "operationId": "HeadVideoStream",
+        "parameters": [
+          "itemId",
+          "container",
+          "static",
+          "params",
+          "tag",
+          "deviceProfileId",
+          "playSessionId",
+          "segmentContainer",
+          "segmentLength",
+          "minSegments",
+          "mediaSourceId",
+          "deviceId",
+          "audioCodec",
+          "enableAutoStreamCopy",
+          "allowVideoStreamCopy",
+          "allowAudioStreamCopy",
+          "audioSampleRate",
+          "maxAudioBitDepth",
+          "audioBitRate",
+          "audioChannels",
+          "maxAudioChannels",
+          "profile",
+          "level",
+          "framerate",
+          "maxFramerate",
+          "copyTimestamps",
+          "startTimeTicks",
+          "width",
+          "height",
+          "maxWidth",
+          "maxHeight",
+          "videoBitRate",
+          "subtitleStreamIndex",
+          "subtitleMethod",
+          "maxRefFrames",
+          "maxVideoBitDepth",
+          "requireAvc",
+          "deInterlace",
+          "requireNonAnamorphic",
+          "transcodingMaxAudioChannels",
+          "cpuCoreLimit",
+          "liveStreamId",
+          "enableMpegtsM2TsMode",
+          "videoCodec",
+          "subtitleCodec",
+          "transcodeReasons",
+          "audioStreamIndex",
+          "videoStreamIndex",
+          "context",
+          "streamOptions",
+          "enableAudioVbrEncoding"
+        ]
+      }
+    },
+    "/Videos/{routeItemId}/{routeMediaSourceId}/Subtitles/{routeIndex}/Stream.{routeFormat}": {
+      "get": {
+        "operationId": "GetSubtitle",
+        "parameters": [
+          "routeItemId",
+          "routeMediaSourceId",
+          "routeIndex",
+          "routeFormat",
+          "itemId",
+          "mediaSourceId",
+          "index",
+          "format",
+          "endPositionTicks",
+          "copyTimestamps",
+          "addVttTimeMap",
+          "startPositionTicks"
+        ]
+      }
+    }
+  }
+}

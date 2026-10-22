@@ -1,0 +1,8 @@
+{
+  "rootDir": ".",
+  "files": ["manifest", "source/**/*", "components/**/*", "images/**/*", "fonts/Inter-*.ttf", "fonts/Inter-OFL.txt"],
+  "outFile": "../dist/luma.zip",
+  "stagingDir": "../dist/roku-staging",
+  "createPackage": true,
+  "copyToStaging": true
+}

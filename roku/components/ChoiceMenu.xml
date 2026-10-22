@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- One short list to pick from: library order, genre, profile. -->
+<component name="ChoiceMenu" extends="Group">
+  <interface>
+    <field id="title" type="string" alias="choiceTitle.text" />
+    <field id="options" type="array" onChange="OnOptions" />
+    <field id="checkedIndex" type="integer" value="-1" onChange="PaintRows" />
+    <field id="chosen" type="integer" alwaysNotify="true" />
+    <field id="dismissed" type="boolean" alwaysNotify="true" />
+  </interface>
+  <script type="text/brightscript" uri="pkg:/source/Utils.brs" />
+  <script type="text/brightscript" uri="ChoiceMenu.brs" />
+  <children>
+    <Rectangle id="choicePanel" width="600" height="200" color="0x2c2c2ef2" />
+    <Label id="choiceTitle" translation="[32,24]" width="536" height="48" color="0xffffffff"><Font role="font" uri="pkg:/fonts/Inter-Bold.ttf" size="29" /></Label>
+    <Group id="choiceRows" translation="[16,88]" />
+    <Label id="choiceMore" translation="[32,0]" width="536" height="28" horizAlign="right" color="0x8e8e93ff"><Font role="font" uri="pkg:/fonts/Inter-Regular.ttf" size="19" /></Label>
+  </children>
+</component>

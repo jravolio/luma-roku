@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SearchKeyboard" extends="Group">
+  <interface>
+    <!-- Output: the value of the key pressed with OK (letter, digit, space, backspace, clear). -->
+    <field id="key" type="string" alwaysNotify="true" />
+    <!-- Output: "right" when Right is pressed on the last column. Left on the first column bubbles to the page. -->
+    <field id="edge" type="string" alwaysNotify="true" />
+    <!-- Input: false keeps the cursor visible but dimmed while results own focus. -->
+    <field id="active" type="boolean" value="true" onChange="PaintKeys" />
+  </interface>
+  <script type="text/brightscript" uri="pkg:/source/Utils.brs" />
+  <script type="text/brightscript" uri="pkg:/source/Icons.brs" />
+  <script type="text/brightscript" uri="SearchKeyboard.brs" />
+</component>

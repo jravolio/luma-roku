@@ -1,0 +1,15 @@
+title=Luma
+subtitle=Seu cinema. Em casa.
+major_version=1
+minor_version=0
+build_version=0
+ui_resolutions=fhd
+mm_icon_focus_fhd=pkg:/images/channel-icon-fhd.png
+mm_icon_focus_hd=pkg:/images/channel-icon-hd.png
+mm_icon_side_hd=pkg:/images/channel-icon-hd.png
+splash_screen_fhd=pkg:/images/splash.png
+splash_color=#0c0c0f
+splash_min_time=0
+supports_input_launch=1
+sdk_instant_resume=1
+run_as_process=1
